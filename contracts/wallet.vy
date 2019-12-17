@@ -33,9 +33,9 @@ def exec(_to :address, _value: uint256, _data: bytes[500], _gasLimit: uint256, _
     assert self.owners[_sender] == True
     self.nonce = self.nonce + 1
     if len(_data) == 0:
-        self.payRelayer(_data, _gasLimit)
-    else:
         send(_to, _value)
+    else:
+        self.payRelayer(_data, _gasLimit)
     return True
     
 @public
